@@ -1,0 +1,45 @@
+shir_brosh
+316124767
+
+
+=============================
+=      File description     =
+=============================
+This exercise contains the following java classes:
+SimpleHashSet.java - A superclass for implementations of hash-sets implementing the SimpleSet interface.
+OpenHashSet.java - A class that builds the Open Hash Set data structure, implementing SimpleSet
+WrapperHashSet.java - A wrapper class for the openHashSet class- builds a linked list object that will be
+    assigned in every element in the openHashSet Array
+ClosedHashSet.java - A class that builds the Close Hash Set data structure, implementing SimpleSet
+CollectionFacadeSet.java - Wraps an underlying Collection and serves to both simplify its API and give it
+    a common type with the implemented SimpleHashSets.
+SimpleSetPerformanceAnalyzer.java - A class that measures the run-times requested in the "Performance
+    Analysis" section
+
+=============================
+=  Implementation details   =
+=============================
+OpenHashSet.java- In order to implement this class I used the WrapperHashSet.java that creates an object
+    containing a linked list data member to execute the OpenHashSet logic, I chose this design because in
+    my opinion it is the most easier option to execute and convenient to use.
+ClosedHashSet.java- In order to implement this class I used a list of Strings, this way every element in
+    the closedHashSet contains it's value, when ever we delete a value from the list the element in the
+    list in which the value to delete was located receives a special String parameter called-wasDeleted
+    that initialized with the value "this String was deleted", that way we can overcome the difficulty in
+    the closedHashSet logic because we can differ between a deleted value and a regular value using a
+    regular "==" compare to check if the value points to the wasDeleted memory spot.
+
+=============================
+=      Analysis results     =
+=============================
+1.OpenHashSet - as shown in the results for data1, it took a while for the add test, and relatively long
+    time for the contains "-13170890158" test, the "hi" test was really fast.
+  ClosedHashSet - as shown in the results for data1, it took a relatively short time for the contains
+    "hi" test, and really long time for both add and contains "-13170890158" tests.
+2.Its clear from the analysis results that the most efficient data structures are the TreeSet and HashSet,
+    so i would prefer to use them for all most everything, Its also clear that the data structure with
+    the worst running times are the ClosedHashSet and the LinkedListSet.
+3.We can see from the results that the OpenHashSet's running time is much lower then then ClosedHashSet,
+    and there for more efficient.
+4.The java's built in HashSet is clearly much more efficient then my implementation, its running time for
+    every function is significantly lower.
